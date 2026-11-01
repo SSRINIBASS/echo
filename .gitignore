@@ -1,39 +1,33 @@
-# --- Python ---
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
 
-# --- Environments ---
-# Common names for virtual environments, just in case
+# Environments and secrets
 .env
-.venv
-env/
+.env.*
+!.env.example
+.venv/
 venv/
-ENV/
+env/
 .venv_demo/
-
-# --- Data & RAG Documents ---
-# Ignoring the 'data' directory contents (PDFs/Knowledge base)
-data/*
-# Optional: Keep the data folder structure but ignore files
-!data/.gitkeep
-
-# --- Configuration & Secrets ---
-# app.yaml often contains environment variables/secrets
 app.yaml
 
-# --- Local Assets ---
-# Specific private image file from your tree
-private_rag.png
+# Runtime data and logs
+data/*
+!data/.gitkeep
+*.db
+*.sqlite*
+*.log
+logs/
+Cache/
 
-# --- IDE & OS ---
+# Local assets and tooling
+private_rag.png
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
-
-# --- Testing ---
-.pytest_cache/
-coverage.xml
-htmlcov/
