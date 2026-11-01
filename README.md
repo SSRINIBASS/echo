@@ -8,7 +8,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/Project-Streaming%20Analytics-2563EB?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Testing-Pytest-2E8B57?style=for-the-badge&logo=pytest&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Test%20Framework-Pytest-4B5563?style=for-the-badge&logo=pytest&logoColor=white"/>
   <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
 </p>
 
@@ -93,7 +93,7 @@ Run the Python test suite:
 python -m pytest tests/ -v
 ```
 
-The repository README reports 153 tests across core pipeline, sentiment, pulse score, phrase clustering, influencer tracking, and performance monitoring.
+The test suite is organised around core pipeline behaviour, sentiment analysis, pulse scoring, phrase influence, and price integration.
 
 ## 🔐 Notes
 
