@@ -1,92 +1,84 @@
-# Crypto Narrative Pulse Tracker
+# Echo — Crypto Narrative Pulse Tracker
 
-Real-time sentiment analytics for crypto traders. Processes social signals → generates momentum scores (1-10) → sends alerts.
+A streaming analytics project that turns social signals into a compact view of emerging crypto narratives. It combines message ingestion, sentiment analysis, phrase clustering, influencer signals, and price/sentiment divergence into a live dashboard and alerting workflow.
 
-![Architecture](assets/architecture.jpeg)
+## What it does
 
-## Features
+- Ingests social messages through a webhook and processes them through a Pathway-based pipeline.
+- Scores sentiment with VADER and a crypto-oriented lexicon.
+- Groups recurring phrases to surface developing narratives.
+- Combines sentiment, phrase momentum, and influencer signals into a pulse score.
+- Compares narrative sentiment with market price movement to identify divergence.
+- Exposes metrics over HTTP and WebSockets, with optional Telegram alerts.
+- Includes a simulator for repeatable demonstrations without a live message source.
 
-- **Pulse Score** - Combines sentiment, trending phrases, influencer signals into 1-10 score
-- **Phrase Clustering** - Detects emerging narratives via bigram/trigram analysis
-- **Influencer Tracking** - Weights signals by follower count and engagement
-- **Divergence Detection** - Alerts when sentiment diverges from price action
-- **RAG Chat** - Query market context with LLM-powered responses
-- **Telegram Alerts** - Real-time notifications for score thresholds
+## Architecture
 
-## Quick Start
+```mermaid
+flowchart LR
+    S[Social signal webhook] --> P[Pathway pipeline]
+    M[Demo simulator] --> S
+    P --> N[Sentiment and phrase analysis]
+    N --> C[Pulse score and divergence]
+    C --> A[Flask API and WebSockets]
+    A --> D[Dashboard]
+    C --> T[Optional Telegram alerts]
+    A --> R[Optional RAG query]
+```
 
-### Docker (Recommended)
+## Stack
+
+Python · Pathway · Flask · VADER · WebSockets · Next.js · Ollama (optional) · Telegram Bot API
+
+## Run with Docker
+
+### Prerequisites
+
+- Docker Engine
+- Docker Compose
+
+### Start the pipeline
 
 ```bash
-# Start pipeline
-docker-compose up pipeline
-
-# With simulator (demo mode)
-docker-compose --profile demo up
+git clone https://github.com/SSRINIBASS/echo.git
+cd echo
+docker compose up --build pipeline
 ```
 
-### Local Development (Windows)
+The API and webhook service are exposed on ports `8000` and `8080` by default.
+
+### Run the demo simulator
+
+In another terminal:
 
 ```bash
-# Pathway requires Linux - use demo mode locally
-.venv_demo\Scripts\activate
-python main.py
+docker compose --profile demo run --rm simulator
 ```
 
-### Frontend
+### Start the dashboard and Telegram bot
+
+Configure the required environment variables in a local `.env` file, then run:
 
 ```bash
-cd frontend
-npm install
-npm run dev
+docker compose --profile full up --build
 ```
 
-## API Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/metrics` | GET | Current pulse score, phrases, consensus |
-| `/api/metrics/history` | GET | Historical scores for charting |
-| `/api/performance` | GET | Latency and throughput metrics |
-| `/api/query` | POST | RAG query for market insights |
-| `/` | POST | Webhook for message ingestion |
-
-## Configuration
+### Optional local LLM
 
 ```bash
-# .env
-TELEGRAM_TOKEN=your_bot_token
-TELEGRAM_CHANNEL_ID=@your_channel
-TRACKED_COIN=MEME
-COINGECKO_API_KEY=CG-xxx  # Optional, demo key
+docker compose --profile llm up -d ollama
 ```
-
-## Project Structure
-
-```
-├── main.py              # API server + demo mode
-├── pipeline.py          # Pathway streaming pipeline
-├── transforms/          # Sentiment, pulse score, clustering
-├── connectors/          # Webhook, price fetcher
-├── bot/                 # Telegram alerts
-├── rag/                 # LLM integration
-├── simulator/           # Hype cycle simulator
-└── frontend/            # Next.js dashboard
-```
-
-## Tech Stack
-
-- **Pathway** - Real-time streaming (Docker only)
-- **VADER + Crypto Lexicon** - Sentiment analysis
-- **CoinGecko API** - Price data
-- **Ollama** - Local LLM for RAG
-- **Next.js** - Dashboard frontend
-- **Telegram Bot API** - Alerts
 
 ## Tests
+
+Run the Python test suite:
 
 ```bash
 python -m pytest tests/ -v
 ```
 
-153 tests covering core pipeline, sentiment, pulse score, phrase clustering, influencer tracking, and performance monitoring.
+The tests are organised around pipeline behaviour, sentiment, pulse scoring, phrase influence, and price integration.
+
+## Notes
+
+The full Pathway pipeline is intended to run in the Linux container environment. A local simulator/demo path is provided for development and walkthroughs. External API credentials belong in local environment configuration, never in committed files.
