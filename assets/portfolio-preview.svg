@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="t d">
+<title id="t">Echo — streaming narrative analytics</title><desc id="d">A signal pipeline from social messages through sentiment analysis and phrase clustering to pulse scores and live dashboards.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#17142D"/><stop offset="1" stop-color="#31204A"/></linearGradient><linearGradient id="a"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#2DD4BF"/></linearGradient></defs>
+<rect width="760" height="330" rx="24" fill="url(#bg)"/><circle cx="640" cy="160" r="170" fill="#A855F7" opacity=".09"/>
+<g opacity=".12" stroke="#C4B5FD"><path d="M0 66H760M0 132H760M0 198H760M0 264H760"/><path d="M95 0V330M190 0V330M285 0V330M380 0V330M475 0V330M570 0V330M665 0V330"/></g>
+<rect x="34" y="28" width="172" height="26" rx="13" fill="#4C2B68"/><text x="48" y="46" font-family="Inter,Segoe UI,Arial" font-size="11" letter-spacing="1.5" fill="#E9D5FF">04 / STREAMING ANALYTICS</text>
+<text x="34" y="112" fill="#F8FAFC" font-family="Inter,Segoe UI,Arial" font-size="39" font-weight="700">Echo</text>
+<text x="35" y="145" fill="#D8B4FE" font-family="Inter,Segoe UI,Arial" font-size="16">Crypto narrative pulse tracker</text>
+<text x="35" y="174" fill="#C6B9D5" font-family="Inter,Segoe UI,Arial" font-size="13">Turn noisy social signals into measurable trends.</text>
+<g font-family="Inter,Segoe UI,Arial" font-size="11" fill="#F3E8FF">
+<rect x="34" y="210" width="82" height="28" rx="14" fill="#38264E" stroke="#76509B"/><text x="75" y="228" text-anchor="middle">Python</text>
+<rect x="124" y="210" width="87" height="28" rx="14" fill="#38264E" stroke="#76509B"/><text x="167" y="228" text-anchor="middle">Pathway</text>
+<rect x="34" y="246" width="70" height="28" rx="14" fill="#3D2859" stroke="#76509B"/><text x="69" y="264" text-anchor="middle">Flask</text>
+<rect x="112" y="246" width="105" height="28" rx="14" fill="#3D2859" stroke="#76509B"/><text x="164" y="264" text-anchor="middle">WebSockets</text>
+</g>
+<g stroke="url(#a)" stroke-width="2" fill="none"><path d="M416 116H466M558 116H612M513 152V208H612"/></g>
+<g font-family="Inter,Segoe UI,Arial" text-anchor="middle">
+<rect x="332" y="82" width="84" height="66" rx="12" fill="#38244F" stroke="#A78BFA"/><text x="374" y="109" fill="#E9D5FF" font-size="12">Signals</text><text x="374" y="128" fill="#C4B5FD" font-size="10">Webhooks</text>
+<rect x="466" y="82" width="92" height="66" rx="12" fill="#38244F" stroke="#A78BFA"/><text x="512" y="109" fill="#E9D5FF" font-size="12">Stream</text><text x="512" y="128" fill="#C4B5FD" font-size="10">Pathway</text>
+<rect x="612" y="82" width="120" height="66" rx="12" fill="#17423F" stroke="#2DD4BF"/><text x="672" y="109" fill="#99F6E4" font-size="12">Pulse score</text><text x="672" y="128" fill="#CCFBF1" font-size="10">Momentum</text>
+<rect x="435" y="208" width="128" height="58" rx="12" fill="#38244F" stroke="#A78BFA"/><text x="499" y="232" fill="#E9D5FF" font-size="12">Sentiment</text><text x="499" y="249" fill="#C4B5FD" font-size="10">Phrase clusters</text>
+<rect x="612" y="208" width="120" height="58" rx="12" fill="#17423F" stroke="#2DD4BF"/><text x="672" y="232" fill="#99F6E4" font-size="12">Live metrics</text><text x="672" y="249" fill="#CCFBF1" font-size="10">Dashboard / alerts</text>
+</g>
+<path d="M563 237H612" stroke="#2DD4BF" stroke-width="2" fill="none"/>
+<text x="34" y="306" fill="#9D8AB8" font-family="Inter,Segoe UI,Arial" font-size="10" letter-spacing="1.3">INGESTION  •  SENTIMENT  •  CLUSTERING  •  SIGNALS</text>
+</svg>
