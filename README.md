@@ -1,3 +1,9 @@
+<div align="center">
+
+<img src="assets/portfolio-preview.svg" width="100%" alt="Echo streaming narrative analytics architecture"/>
+
+</div>
+
 # Echo — Crypto Narrative Pulse Tracker
 
 <p>
