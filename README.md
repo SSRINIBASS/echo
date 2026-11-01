@@ -1,8 +1,18 @@
 # Echo — Crypto Narrative Pulse Tracker
 
+<p>
+  <img src="https://img.shields.io/badge/Project-Streaming%20Analytics-2563EB?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Tests-153%20reported-2E8B57?style=for-the-badge&logo=pytest&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+</p>
+
+<p>
+  <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=python,flask,nextjs,docker,sqlite&perline=5" alt="Echo technology stack"/></a>
+</p>
+
 A streaming analytics project that turns social signals into a compact view of emerging crypto narratives. It combines message ingestion, sentiment analysis, phrase clustering, influencer signals, and price/sentiment divergence into a live dashboard and alerting workflow.
 
-## What it does
+## ✨ What it does
 
 - Ingests social messages through a webhook and processes them through a Pathway-based pipeline.
 - Scores sentiment with VADER and a crypto-oriented lexicon.
@@ -12,7 +22,7 @@ A streaming analytics project that turns social signals into a compact view of e
 - Exposes metrics over HTTP and WebSockets, with optional Telegram alerts.
 - Includes a simulator for repeatable demonstrations without a live message source.
 
-## Architecture
+## 🏗️ Architecture
 
 ```mermaid
 flowchart LR
@@ -26,11 +36,11 @@ flowchart LR
     A --> R[Optional RAG query]
 ```
 
-## Stack
+## 🧰 Stack
 
 Python · Pathway · Flask · VADER · WebSockets · Next.js · Ollama (optional) · Telegram Bot API
 
-## Run with Docker
+## 🚀 Run with Docker
 
 ### Prerequisites
 
@@ -69,7 +79,7 @@ docker compose --profile full up --build
 docker compose --profile llm up -d ollama
 ```
 
-## Tests
+## 🧪 Tests
 
 Run the Python test suite:
 
@@ -77,8 +87,8 @@ Run the Python test suite:
 python -m pytest tests/ -v
 ```
 
-The tests are organised around pipeline behaviour, sentiment, pulse scoring, phrase influence, and price integration.
+The repository README reports 153 tests across core pipeline, sentiment, pulse score, phrase clustering, influencer tracking, and performance monitoring.
 
-## Notes
+## 🔐 Notes
 
 The full Pathway pipeline is intended to run in the Linux container environment. A local simulator/demo path is provided for development and walkthroughs. External API credentials belong in local environment configuration, never in committed files.
