@@ -2,7 +2,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/Project-Streaming%20Analytics-2563EB?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Tests-153%20reported-2E8B57?style=for-the-badge&logo=pytest&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Testing-Pytest-2E8B57?style=for-the-badge&logo=pytest&logoColor=white"/>
   <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
 </p>
 
